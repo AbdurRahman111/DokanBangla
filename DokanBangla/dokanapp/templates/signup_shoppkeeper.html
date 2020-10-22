@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+
+{%block title%}Sign Up for Shoppkeeper{% endblock %}
+
+{%block body%}
+
+{% load static %}
+
+
+
+<!-- ***** Contact Us Area Starts ***** -->
+    <section class="section" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-12">
+                    <div class="left-text-content">
+
+                    	<ul class="contact-info">
+                        	<li>Dokan Bangla is your Own Shopping Zone</li>
+
+                        </ul>
+                        <div class="section-heading">
+                            
+                            <h3>SignUp Here for Shoppkeeper.!</h3>
+                        </div>
+                        
+
+
+                        <!-- <ul class="contact-info">
+                            <li><img src="{% static 'website/assets/images/contact-info-01.png' %}" alt="">010-020-0860</li>
+                            <li><img src="{% static 'website/assets/images/contact-info-02.png' %}" alt="">info@company.com</li>
+                            <li><img src="{% static 'website/assets/images/contact-info-03.png' %}" alt="">www.company.com</li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <div class="contact-form">
+                        <form id="contact" action="signup_castomer" method="POST">{%csrf_token%}
+                          <div class="">
+<!--                            <div class="col-md-4 col-sm-12">-->
+<!--                              <fieldset>-->
+<!--                                <label>User Name</label>-->
+<!--                              </fieldset>-->
+<!--                            </div>-->
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">First Name</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="name" name="shoppkeeper_name_first" class="form-control" id="shoppkeeper_name" placeholder="First Name">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Last Name</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="text" name="shoppkeeper_name_last" class="form-control" id="shoppkeeper_name_last" placeholder="Last Name">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Phone Number</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="text" name="shoppkeeper_phone" class="form-control" id="shoppkeeper_phone"placeholder="123456">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">National ID Card No.</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="text" name="shoppkeeper_NID" class="form-control" id="shoppkeeper_NID" placeholder="National ID Card">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Type of Shop</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <div class="form-group">
+
+                                  <select id="inputState" name="uvanue" class="form-control">
+                                    <option selected>Choose...</option>
+
+                                    <option>bakery</option>
+                                    <option>barber</option>
+                                    <option>butcher’s</option>
+                                    <option>bookshop</option>
+                                    <option>boutique</option>
+                                    <option>café</option>
+                                    <option>candy shop</option>
+                                    <option>computer shop</option>
+                                    <option>clothes shop</option>
+                                    <option>DVD rental</option>
+                                    <option>delicatessen</option>
+                                    <option>fish & chips shop</option>
+                                    <option>fishmonger’s </option>
+                                    <option>grocery</option>
+                                    <option> greengrocer’s</option>
+                                    <option>gift shop</option>
+                                    <option>hardware store</option>
+                                    <option> jewellery store </option>
+                                    <option>market</option>
+                                    <option>music shop</option>
+
+
+                                    <option>mall </option>
+                                    <option>newsagent’s </option>
+                                    <option>pawn shop</option>
+                                    <option>pet shop</option>
+                                    <option>restaurant </option>
+                                    <option>supermarket </option>
+                                    <option>shoe shop </option>
+                                    <option>toy shop </option>
+                                    <option>None</option>
+                                    <option>Other</option>
+                                  </select>
+
+
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Area That you want to Delivery</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="text" name="area_delivery" class="form-control" id="area_delivery" placeholder="Area That you want to Delivery">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Take time to Delivery</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="text" name="time_delivery" class="form-control" id="time_delivery" placeholder="Take time to Delivery">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">What is your lowest amount for selling</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="text" name="lowest_amount_selling" class="form-control" id="lowest_amount_selling" placeholder="What is your lowest amount for selling">
+                              </div>
+                            </div>
+
+
+                            <div class="form-group form-check">
+                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+
+                            <form action="." id="form" method=POST>
+                            <p><label for="check">Check this:</label> <input type="checkbox" name="check" id="check" /></p>
+                            <p><input type=submit value="Submit"></p>
+                            </form>
+
+
+
+
+
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us Area Ends ***** -->
+
+    {% endblock %}
