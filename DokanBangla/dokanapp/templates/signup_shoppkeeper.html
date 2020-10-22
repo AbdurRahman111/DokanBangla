@@ -35,8 +35,10 @@
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-xs-12">
+
+                    <form id="contact" action="signup_shoppkeeper" method="POST">{%csrf_token%}
                     <div class="contact-form">
-                        <form id="contact" action="signup_shoppkeeper" method="POST">{%csrf_token%}
+
                           <div class="">
 <!--                            <div class="col-md-4 col-sm-12">-->
 <!--                              <fieldset>-->
@@ -66,6 +68,13 @@
                             </div>
 
                             <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Shop Name</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="text" name="shop_name" class="form-control" id="dokan_name"placeholder="Shop Name">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
                               <label class="col-sm-3 col-form-label">National ID Card No.</label>
                               <div class="col-sm-10 col-lg-5">
                                 <input type="text" name="shoppkeeper_NID" class="form-control" id="shoppkeeper_NID" placeholder="National ID Card">
@@ -77,7 +86,7 @@
                               <div class="col-sm-10 col-lg-5">
                                 <div class="form-group">
 
-                                  <select id="inputState" name="uvanue" class="form-control">
+                                  <select id="inputState" name="shop_type" class="form-control">
                                     <option selected>Choose...</option>
 
                                     <option>bakery</option>
@@ -143,24 +152,42 @@
 
 
 
-
-                            <div class="col-lg-12">
-                              <fieldset>
-                                <button type="submit" id="form-submit" class="main-button-icon">Sign UP<i class="fa fa-arrow-right"></i></button>
-                              </fieldset>
-                            </div>
-
-
-
-
-
                           </div>
-                        </form>
+
+
                     </div>
+
+
+
+                      <div class="form-group form-check">
+                        <input type="checkbox" name="chack_terms_conditions" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1"><a href="terms_conditions">Do you Agree of our Terms and Conditions.</a></label>
+                      </div>
+
+                      <div class="col-lg-12">
+                          <fieldset>
+                            <button type="submit" id="form-submit" class="main-button-icon">Sign UP<i class="fa fa-arrow-right"></i></button>
+                          </fieldset>
+                      </div>
+
+
+                    </form>
+
                 </div>
+
+
+
             </div>
+
+
         </div>
+
+
+
     </section>
     <!-- ***** Contact Us Area Ends ***** -->
+
+
+
 
     {% endblock %}

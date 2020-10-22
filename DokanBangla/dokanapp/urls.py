@@ -10,6 +10,7 @@ urlpatterns = [
     path('signup_castomer', views.signup_castomer, name='signup_castomer'),
     path('signup_shoppkeeper', views.signup_shoppkeeper, name='signup_shoppkeeper'),
     path('login', views.login, name='login'),
+    path('terms_conditions', views.terms_conditions, name='terms_conditions'),
 
 
 ]

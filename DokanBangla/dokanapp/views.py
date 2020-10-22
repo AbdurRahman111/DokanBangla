@@ -46,10 +46,33 @@ def signup_castomer(request):
         return render(request, 'index.html')
 
 def signup_shoppkeeper(request):
+    firstname_shoppkeeper=request.POST.get('shoppkeeper_name_first')
+    lastname_shoppkeeper=request.POST.get('shoppkeeper_name_last')
+    phone_shoppkeeper=request.POST.get('shoppkeeper_phone')
+    shopname_shoppkeeper=request.POST.get('shop_name')
+    NID_shoppkeeper=request.POST.get('shoppkeeper_NID')
+    type_shop_shoppkeeper=request.POST.get('shop_type')
+    area_shoppkeeper=request.POST.get('area_delivery')
+    taketime_shoppkeeper=request.POST.get('time_delivery')
+    lowest_prize_shoppkeeper=request.POST.get('lowest_amount_selling')
+    chack_terms_conditions_shoppkeeper=request.POST.get('chack_terms_conditions')
+
+    print(firstname_shoppkeeper, lastname_shoppkeeper, phone_shoppkeeper, shopname_shoppkeeper, NID_shoppkeeper, type_shop_shoppkeeper,area_shoppkeeper, taketime_shoppkeeper, lowest_prize_shoppkeeper)
+
+
+
+
+
+
+
     return render(request, 'signup_shoppkeeper.html')
 
 def login(request):
     return render(request, 'login.html')
+
+
+def terms_conditions(request):
+    return render(request, 'terms_conditions_page.html')
 
 
 
