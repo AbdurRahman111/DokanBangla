@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+
+{%block title%}Sign Up for Shoppkeeper{% endblock %}
+
+{%block body%}
+
+{% load static %}
+
+
+
+<!-- ***** Contact Us Area Starts ***** -->
+    <section class="section" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-12">
+                    <div class="left-text-content">
+
+                    	<ul class="contact-info">
+                        	<li>Dokan Bangla is your Own Shopping Zone</li>
+
+                        </ul>
+                        <div class="section-heading">
+                            
+                            <h3>Login Here for Customer !</h3>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+
+                    <form id="contact" action="customer_login" method="POST">{%csrf_token%}
+                    <div class="contact-form">
+
+                          <div class="">
+<!--                            <div class="col-md-4 col-sm-12">-->
+<!--                              <fieldset>-->
+<!--                                <label>User Name</label>-->
+<!--                              </fieldset>-->
+<!--                            </div>-->
+
+
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Email</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="email" name="customer_login_email" class="form-control" id="customer_login_email" placeholder="user@example.com">
+                              </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Password</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="password" name="customer_login_password" class="form-control" id="customer_login_password" placeholder="**************">
+                              </div>
+                            </div>
+
+
+
+                          </div>
+
+
+                    </div>
+
+
+
+
+
+                      <div class="col-lg-12">
+                          <fieldset>
+                            <button type="submit" id="form-submit" class="main-button-icon">Login<i class="fa fa-arrow-right"></i></button>
+                          </fieldset>
+                      </div>
+
+
+                    </form>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </section>
+    <!-- ***** Contact Us Area Ends ***** -->
+
+
+
+
+    {% endblock %}
