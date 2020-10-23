@@ -1,38 +1,121 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-
-        <nav class="navbar navbar-light bg-light">
-          <form class="form-inline">
-            <button class="btn btn-outline-success" type="button">Main button</button>
-            <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
-          </form>
-        </nav>
+{% extends 'profile_base.html' %}
 
 
-    </nav>
+{%block title%}Sign Up for Shoppkeeper{% endblock %}
 
-    <!-- Optional JavaScript; choose one of the two! -->
+{%block body%}
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+{% load static %}
 
-    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    -->
-  </body>
-</html>
+
+
+<!-- ***** Contact Us Area Starts ***** -->
+    <section class="section" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-12">
+                    <div class="left-text-content">
+
+                    	<ul class="contact-info">
+                        	<li>Dokan Bangla is your Own Shopping Zone</li>
+
+                        </ul>
+                        <div class="section-heading">
+
+                            <h3>Upload Your Product Here!</h3>
+                        </div>
+
+
+
+                        <!-- <ul class="contact-info">
+                            <li><img src="{% static 'website/assets/images/contact-info-01.png' %}" alt="">010-020-0860</li>
+                            <li><img src="{% static 'website/assets/images/contact-info-02.png' %}" alt="">info@company.com</li>
+                            <li><img src="{% static 'website/assets/images/contact-info-03.png' %}" alt="">www.company.com</li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+
+                    <form id="contact" action="profile" method="POST">{%csrf_token%}
+                    <div class="contact-form">
+
+                          <div class="">
+<!--                            <div class="col-md-4 col-sm-12">-->
+<!--                              <fieldset>-->
+<!--                                <label>User Name</label>-->
+<!--                              </fieldset>-->
+<!--                            </div>-->
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Catagory</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="name" name="shoppkeeper_name_first" class="form-control" id="shoppkeeper_name" placeholder="First Name">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Product Name</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="text" name="shoppkeeper_name_last" class="form-control" id="shoppkeeper_name_last" placeholder="Last Name">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Prize</label>
+                              <div class="col-sm-10 col-lg-5">
+                                <input type="text" name="shop_name" class="form-control" id="dokan_name"placeholder="Shop Name">
+                              </div>
+                            </div>
+
+
+
+
+
+
+
+
+                          </div>
+
+
+                    </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Image Upload</label>
+                                <div class="col-sm-10 col-lg-5">
+                                  <input type="file" data-model-name="image_upload" id="myFile" name="filename">
+
+                                </div>
+                             </div>
+
+                      <div class="form-group form-check">
+                        <input type="checkbox" name="chack_terms_conditions" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Do you Agree to our <a href="terms_conditions">Terms and Conditions.</a></label>
+                      </div>
+
+                      <div class="col-lg-12">
+                          <fieldset>
+                            <button type="submit" id="form-submit" class="main-button-icon">Sign UP<i class="fa fa-arrow-right"></i></button>
+                          </fieldset>
+                      </div>
+
+
+                    </form>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </section>
+    <!-- ***** Contact Us Area Ends ***** -->
+
+
+
+
+    {% endblock %}
